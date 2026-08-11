@@ -6,7 +6,7 @@ const UserSchema=new mongoose.Schema({
     },
     uid:{
         type:String,
-        required:true``
+        required:true
     },
     phoneUrl:{
         type:String,
@@ -27,5 +27,5 @@ const UserSchema=new mongoose.Schema({
      timestamps: true
 }
 )
-const Auth=mongoose.model('Auth',authSchema)
+const Auth=mongoose.model('Auth',UserSchema)
 export default Auth
