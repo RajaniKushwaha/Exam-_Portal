@@ -40,14 +40,29 @@ const Navbar = () => {
 
         {/* Buttons */}
         <div className="hidden md:flex gap-3">
-
+{/* 
           <button className="px-5 py-2 border border-blue-600 rounded-lg text-blue-600 hover:bg-blue-50 transition">
             Login
-          </button>
+          </button> */}
 
+          <Link
+          to="/login"
+         className="rounded-lg border border-blue-600 px-5 py-2 text-blue-600 transition hover:bg-blue-50"
+          >
+        Login
+</Link>
+{/* 
           <button className="px-5 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition">
             Register
-          </button>
+          </button> */}
+
+        <Link
+          to="/register"
+
+         className="rounded-lg bg-blue-600 px-5 py-2 text-white transition hover:bg-blue-700"
+         >
+         Register
+        </Link>
 
         </div>
 
