@@ -12,7 +12,8 @@ export const createUser = async (req, res) => {
     const decodeToken = await admin.auth().verifyIdToken(token);
     const { uid, email, name, phoneUrl } = decodeToken;
     const expiresIn = 7 * 24 * 60 * 60 * 1000;
-    const sessionCokkie = await admin
+    const isProduction = process.env.NODE_ENV === "production";
+    const sessionCookie = await admin
       .auth()
       .createSessionCookie(token, { expiresIn });
     res.cookie("session", sessionCookie, {
@@ -27,7 +28,7 @@ export const createUser = async (req, res) => {
         uid,
         email,
         name,
-        photoUrl,
+        phoneUrl,
       });
     }
     return res.status(200).json({

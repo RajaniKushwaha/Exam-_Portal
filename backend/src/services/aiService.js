@@ -4,7 +4,7 @@ import Question from "../model/question.model.js";
 
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
-export const generateAndSaveQuestions = async (
+export const generateQuestionsFromAI = async (
   subject,
   difficulty,
   count,

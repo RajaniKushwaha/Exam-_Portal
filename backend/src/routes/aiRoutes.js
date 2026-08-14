@@ -1,9 +1,9 @@
 import express from "express";
 import { createQuestions } from "../controller/aiController.js";
-import { verifyToken } from "../utils/authMiddleware.js";
+import { verifyAuth } from "../middleware/auth.middleware.js";
 
 const router = express.Router();
 
-router.post("/generate-questions", verifyToken, createQuestions);
+router.post("/generate-questions", verifyAuth, createQuestions);
 
 export default router;
