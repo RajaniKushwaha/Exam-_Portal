@@ -1,7 +1,7 @@
 import admin from "../config/firebase.js";
 import Auth from "../model/user.model.js";
 
-export const verifyAuth = async (req, res) => {
+export const verifyAuth = async (req, res, next) => {
     try {
         const sessionCookie = req.cookies?.session;
         if (!sessionCookie) {
