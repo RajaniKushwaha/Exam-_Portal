@@ -10,14 +10,14 @@ export const createQuestions = async (req, res) => {
     const formattedQuestions = rawQuestions.map(q => ({
       subject,
       difficulty,
-      questionText: q.question,
+      questionText: q.questionText,
       options: q.options,
       correctAnswer: q.correctAnswer,
-      createdBy: req.user.uid 
+      // createdBy: req.user.uid 
     }));
 
-    const savedQuestions = await Question.insertMany(formattedQuestions);
-    res.status(201).json({ success: true, data: savedQuestions });
+    res.status(201).json({ success: true, data: formattedQuestions });
+    // const savedQuestions = await Question.insertMany(formattedQuestions);
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
   }
